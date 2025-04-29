@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/3c4e56c3-bd51-4ace-b1a0-39822db512ff
 1) HOME-LOGIN_PAGE
 
 This app has a common login page for Admin and Users. Both can login using their respective username and password
@@ -13,7 +15,8 @@ b) CRUD operations
  Creating a new dummy subject, adding chapter to it, adding dummy questions, and creating quiz for that respective chapter in that subject. Then showing delete operations:-
  
 
-Uploading demo representation.mp4…
+https://github.com/user-attachments/assets/21131666-5473-467f-8070-75ac58a901ff
+
 
 
 Creating a quiz
