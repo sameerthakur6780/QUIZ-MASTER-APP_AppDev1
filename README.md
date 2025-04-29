@@ -16,5 +16,7 @@ Editing a Subject- changing the name of the subject, adding chapters to it, addi
 Editing a Chapter- changing its name, adding questions, and editing and deleting the questions
 ![Image Alt](https://github.com/sameerthakur6780/QUIZ-MASTER-APP_AppDev1/blob/82205fd188d9195bbf9ca44889dc1398af775014/Screenshot%202025-04-29%20091335.png)
 
-Adding Questions
+Adding Questions to a chapter
 ![Image Alt](https://github.com/sameerthakur6780/QUIZ-MASTER-APP_AppDev1/blob/748f933e9b138093b2cf22f530c2435d72f74cd3/Screenshot%202025-04-29%20092448.png)
+
+![Screenshot 2025-04-29 091335](https://github.com/user-attachments/assets/aff686ea-43e3-4e48-b8f2-d2c762f45ddc)
