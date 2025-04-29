@@ -10,6 +10,13 @@ a) Admin Dashboard
 
 b) CRUD operations
 
+
+https://github.com/user-attachments/assets/4291beb6-d402-4b85-bd31-841e9866aa12
+
+
+Creating a Subject
+
+
 Editing a Subject- changing the name of the subject, adding chapters to it, adding questions to a particular chapter, and deleting the chapter
 ![Image Alt](https://github.com/sameerthakur6780/QUIZ-MASTER-APP_AppDev1/blob/d7b499a0c2fc100dd84e7a76d5796434280dc631/Screenshot%202025-04-29%20090932.png)
 
