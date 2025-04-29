@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result - Quiz Master</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .result-header {
+            background: linear-gradient(135deg, #4e73df 0%, #36b9cc 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        .result-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .result-score {
+            font-size: 72px;
+            font-weight: bold;
+        }
+        .pass-badge {
+            font-size: 1.2rem;
+            padding: 5px 15px;
+            margin-top: 10px;
+        }
+        .score-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 10px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px auto;
+        }
+        .pass {
+            border-color: #28a745;
+        }
+        .fail {
+            border-color: #dc3545;
+        }
+        .question-result {
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .question-result .card-header {
+            font-weight: bold;
+        }
+        .correct-answer {
+            background-color: rgba(40, 167, 69, 0.1);
+            border-left: 4px solid #28a745;
+        }
+        .wrong-answer {
+            background-color: rgba(220, 53, 69, 0.1);
+            border-left: 4px solid #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 mb-5">
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <!-- Result Header -->
+        <div class="result-header">
+            <h2>Quiz Result</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <p><i class="far fa-file-alt me-2"></i><strong>Subject:</strong> {{ quiz.chapter.subject.name }}</p>
+                </div>
+                <div class="col-md-4">
+                    <p><i class="far fa-bookmark me-2"></i><strong>Chapter:</strong> {{ quiz.chapter.name }}</p>
+                </div>
+                <div class="col-md-4">
+                    <p><i class="far fa-calendar-alt me-2"></i><strong>Date Taken:</strong> {{ attempt.time_stamp_of_attempt.strftime('%Y-%m-%d %H:%M') }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Score Card -->
+        <div class="row mb-4">
+            <div class="col-md-6 offset-md-3">
+                <div class="card result-card text-center">
+                    <div class="card-body py-5">
+                        <h3 class="card-title">Your Score</h3>
+                        <div class="score-circle {% if attempt.total_scored >= 60 %}pass{% else %}fail{% endif %}">
+                            <div class="result-score">{{ attempt.total_scored }}%</div>
+                        </div>
+                        
+                        <div class="badge {% if attempt.total_scored >= 60 %}bg-success{% else %}bg-danger{% endif %} pass-badge">
+                            {% if attempt.total_scored >= 60 %}
+                                <i class="fas fa-check-circle me-1"></i>PASSED
+                            {% else %}
+                                <i class="fas fa-times-circle me-1"></i>FAILED
+                            {% endif %}
+                        </div>
+                        
+                        <p class="card-text mt-3">
+                            {% if attempt.total_scored >= 90 %}
+                                Excellent work! 
+                            {% elif attempt.total_scored >= 75 %}
+                                Great job! You have a strong understanding of the concepts.
+                            {% elif attempt.total_scored >= 60 %}
+                                Good work! You've passed, but there's room for improvement.
+                            {% elif attempt.total_scored >= 40 %}
+                                You need to study more. Review the material and try again.
+                            {% else %}
+                                Significant improvement needed. Take time to review the concepts thoroughly.
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-5">
+            <a href="{{ url_for('take_quiz', quiz_id=quiz.id) }}" class="btn btn-success btn-lg">
+                <i class="fas fa-redo me-2"></i>Retake Quiz
+            </a>
+            <a href="{{ url_for('user_dashboard') }}" class="btn btn-primary btn-lg">
+                <i class="fas fa-home me-2"></i>Return to Dashboard
+            </a>
+        </div>
+
+        <!-- Score History Section -->
+        <div class="card mt-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-history me-2"></i>Your Attempt History</h5>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <i class="fas fa-trophy me-2"></i><strong>Your best score:</strong> {{ best_score }}%
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Attempt</th>
+                                <th>Date</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for a in all_attempts %}
+                                <tr {% if a.id == attempt.id %}class="table-primary"{% endif %}>
+                                    <td>{{ loop.index }}</td>
+                                    <td>{{ a.time_stamp_of_attempt.strftime('%Y-%m-%d %H:%M') }}</td>
+                                    <td>
+                                        <span class="badge {% if a.total_scored >= 60 %}bg-success{% else %}bg-danger{% endif %}">
+                                            {{ a.total_scored }}%
+                                        </span>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light py-3">
+        <div class="container text-center">
+            <p class="text-muted mb-0">Quiz Master &copy; 2025. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
