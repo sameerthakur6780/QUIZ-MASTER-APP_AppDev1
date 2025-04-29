@@ -19,4 +19,10 @@ Editing a Chapter- changing its name, adding questions, and editing and deleting
 Adding Questions to a chapter
 ![Image Alt](https://github.com/sameerthakur6780/QUIZ-MASTER-APP_AppDev1/blob/748f933e9b138093b2cf22f530c2435d72f74cd3/Screenshot%202025-04-29%20092448.png)
 
+Creating a quiz
+![2025-04-29 09-53-08](https://github.com/user-attachments/assets/5ef255fc-6261-43c4-8667-1996d1e04c2c)
+
+
+
+
 
