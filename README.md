@@ -13,9 +13,7 @@ b) CRUD operations
  Creating a new dummy subject, adding chapter to it, adding dummy questions, and creating quiz for that respective chapter in that subject. Then showing delete operations:-
  
 
-https://github.com/user-attachments/assets/a0651519-cc50-4674-9ae9-a43ba0989d92
-
-
+Uploading demo representation.mp4…
 
 
 Creating a quiz
