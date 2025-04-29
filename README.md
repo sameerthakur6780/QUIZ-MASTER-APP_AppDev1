@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/3c4e56c3-bd51-4ace-b1a0-39822db512ff
 1) HOME-LOGIN_PAGE
 
 This app has a common login page for Admin and Users. Both can login using their respective username and password
@@ -16,7 +14,6 @@ b) CRUD operations
  
 
 https://github.com/user-attachments/assets/21131666-5473-467f-8070-75ac58a901ff
-
 
 
 Creating a quiz
