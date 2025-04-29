@@ -24,9 +24,14 @@ https://github.com/user-attachments/assets/21131666-5473-467f-8070-75ac58a901ff
 3) Registering a new user , showing student dashboard , attempting a quiz , showing result summary charts on both user and admin dashboard 
 
 
-
 https://github.com/user-attachments/assets/20719387-ecb1-458a-887f-a437178365be
 
+
+Project Document-2025
+
+
+
+![Screenshot 2025-04-29 134333](https://github.com/user-attachments/assets/82f15427-b31e-438a-a882-54c08f917b23)
 
 
 
