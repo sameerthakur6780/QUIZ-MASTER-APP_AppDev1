@@ -5,10 +5,10 @@ This app has a common login page for Admin and Users. Both can login using their
 
 2) _______------- ADMIN-FUNCTIONALITIES -------_______
 
-a) Admin Dashboard
+     a) Admin Dashboard
  ![Image Alt](https://github.com/sameerthakur6780/QUIZ-MASTER-APP_AppDev1/blob/7ae0437b9885bd2f425bf3606584f15ae09a0ffe/Screenshot%202025-04-29%20084305.png)
 
-b) CRUD operations
+     b) CRUD operations
 
  Creating a new dummy subject, adding chapter to it, adding dummy questions, and creating quiz for that respective chapter in that subject. Then showing delete operations:-
  
@@ -16,9 +16,16 @@ b) CRUD operations
 https://github.com/user-attachments/assets/21131666-5473-467f-8070-75ac58a901ff
 
 
-Creating a quiz
+   c) Creating a quiz
 
 ![2025-04-29 09-53-08](https://github.com/user-attachments/assets/1b79f1fb-78a6-4216-9474-0022d36e2acd)
+
+
+3) Registering a new user , showing student dashboard , attempting a quiz , showing result summary charts on both user and admin dashboard 
+
+
+
+https://github.com/user-attachments/assets/20719387-ecb1-458a-887f-a437178365be
 
 
 
