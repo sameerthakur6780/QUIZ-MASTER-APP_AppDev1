@@ -7,3 +7,7 @@ This app has a common login page for Admin and Users. Both can login using their
 
 Admin Dashboard
  ![Image Alt](https://github.com/sameerthakur6780/QUIZ-MASTER-APP_AppDev1/blob/7ae0437b9885bd2f425bf3606584f15ae09a0ffe/Screenshot%202025-04-29%20084305.png)
+
+Editing a Subject- Adding Chapters, adding questions to a particular chapter
+![Image Alt](https://github.com/sameerthakur6780/QUIZ-MASTER-APP_AppDev1/blob/d7b499a0c2fc100dd84e7a76d5796434280dc631/Screenshot%202025-04-29%20090932.png)
+
