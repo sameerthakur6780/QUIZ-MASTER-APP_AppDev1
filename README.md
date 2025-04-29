@@ -10,21 +10,13 @@ a) Admin Dashboard
 
 b) CRUD operations
 
+ Creating a new dummy subject, adding chapter to it, adding dummy questions, and creating quiz for that respective chapter in that subject. Then showing delete operations:-
+ 
 
-https://github.com/user-attachments/assets/4291beb6-d402-4b85-bd31-841e9866aa12
+https://github.com/user-attachments/assets/a0651519-cc50-4674-9ae9-a43ba0989d92
 
 
-Creating a Subject
 
-
-Editing a Subject- changing the name of the subject, adding chapters to it, adding questions to a particular chapter, and deleting the chapter
-![Image Alt](https://github.com/sameerthakur6780/QUIZ-MASTER-APP_AppDev1/blob/d7b499a0c2fc100dd84e7a76d5796434280dc631/Screenshot%202025-04-29%20090932.png)
-
-Editing a Chapter- changing its name, adding questions, and editing and deleting the questions
-![Image Alt](https://github.com/sameerthakur6780/QUIZ-MASTER-APP_AppDev1/blob/82205fd188d9195bbf9ca44889dc1398af775014/Screenshot%202025-04-29%20091335.png)
-
-Adding Questions to a chapter
-![Image Alt](https://github.com/sameerthakur6780/QUIZ-MASTER-APP_AppDev1/blob/748f933e9b138093b2cf22f530c2435d72f74cd3/Screenshot%202025-04-29%20092448.png)
 
 Creating a quiz
 
